@@ -8,17 +8,16 @@ public class Program {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter a folder path: ");
-		String strPath = sc.nextLine();
+		System.out.println("Enter a file path: ");
+		String strpath = sc.nextLine();
+		
+		File path = new File(strpath);
+		
+		System.out.println("getName: "+ path.getName());
+		System.out.println("getParent: "+ path.getParent());
+		System.out.println("getPath: "+ path.getPath());
 
-		File path = new File(strPath);
-		File[] files = path.listFiles(File::isFile);
-		System.out.println("Files: ");
-		for (File file : files) {
-			System.out.println(file);
-		}
-		boolean sucess = new File(strPath + "\\subdir").mkdir();
-		System.out.println("Directory created sucessfully: " + sucess);
+
 		sc.close();
 
 	}
